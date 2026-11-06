@@ -5,20 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tanda Ventures, LLC</title>
   <meta name="description" content="Tanda Ventures, LLC is a Florida limited liability company based in Weston, Florida.">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23222'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' fill='%23fff' text-anchor='middle'%3ET%3C/text%3E%3C/svg%3E">
+  <meta name="theme-color" content="#1c2e4a">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='3' fill='%231c2e4a'/%3E%3Crect x='5' y='25' width='22' height='1.5' fill='%23b0905a'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='19' fill='%23fff' text-anchor='middle'%3ET%3C/text%3E%3C/svg%3E">
   <style>
     :root {
       --bg: #ffffff;
       --fg: #1f1f1f;
       --muted: #6b6b6b;
       --rule: #e2e2e2;
+      --accent: #1c2e4a;
+      --on-accent: #ffffff;
+      --gold: #b0905a;
+      --bar: var(--accent);
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #141414;
+        --bg: #121417;
         --fg: #e8e8e8;
         --muted: #9a9a9a;
-        --rule: #2c2c2c;
+        --rule: #2a2d33;
+        --accent: #d9dee6;
+        --on-accent: #121417;
+        --gold: #c4a46a;
+        --bar: var(--gold);
       }
     }
     * { box-sizing: border-box; }
@@ -29,6 +38,7 @@
       flex-direction: column;
       background: var(--bg);
       color: var(--fg);
+      border-top: 4px solid var(--bar);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       font-size: 1rem;
       line-height: 1.6;
@@ -45,35 +55,65 @@
       width: 100%;
       max-width: 30rem;
     }
+    .mark {
+      display: block;
+      width: 44px;
+      height: 44px;
+      margin-bottom: 1.5rem;
+    }
+    .mark rect.bg { fill: var(--accent); }
+    .mark rect.bar { fill: var(--gold); }
+    .mark text { fill: var(--on-accent); }
     h1 {
       margin: 0 0 0.25rem;
-      font-size: 1.75rem;
+      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      font-size: 2rem;
       font-weight: 600;
-      letter-spacing: -0.01em;
+      letter-spacing: -0.005em;
+      color: var(--accent);
     }
     .entity {
       margin: 0;
       color: var(--muted);
     }
     hr {
+      width: 3rem;
       border: 0;
-      border-top: 1px solid var(--rule);
+      border-top: 2px solid var(--gold);
       margin: 1.75rem 0;
     }
-    p { margin: 0 0 1rem; }
+    p { margin: 0 0 1.5rem; }
     dl {
       margin: 0;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--rule);
       display: grid;
       grid-template-columns: max-content 1fr;
-      gap: 0.5rem 1.5rem;
+      gap: 0.6rem 1.5rem;
+      align-items: baseline;
     }
-    dt { color: var(--muted); }
-    dd { margin: 0; }
-    a { color: inherit; text-underline-offset: 0.2em; }
+    dt {
+      color: var(--muted);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    dd {
+      margin: 0;
+      font-variant-numeric: tabular-nums;
+    }
+    a {
+      color: inherit;
+      text-decoration-color: var(--gold);
+      text-underline-offset: 0.2em;
+    }
+    a:hover { color: var(--accent); }
     footer {
       padding: 1.5rem;
       text-align: center;
-      font-size: 0.875rem;
+      font-size: 0.8125rem;
+      letter-spacing: 0.02em;
       color: var(--muted);
     }
   </style>
@@ -81,6 +121,11 @@
 <body>
   <main>
     <div class="card">
+      <svg class="mark" viewBox="0 0 32 32" role="img" aria-label="Tanda Ventures monogram">
+        <rect class="bg" width="32" height="32" rx="3"/>
+        <rect class="bar" x="5" y="25" width="22" height="1.5"/>
+        <text x="16" y="22" font-family="Iowan Old Style, Palatino, Georgia, serif" font-size="19" text-anchor="middle">T</text>
+      </svg>
       <h1>Tanda Ventures, LLC</h1>
       <p class="entity">A Florida limited liability company.</p>
       <hr>
